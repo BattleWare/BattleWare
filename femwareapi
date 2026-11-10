@@ -563,6 +563,45 @@ function Library:CreateWindow(Setting)
 	Ruafimg.Size = UDim2.new(0, 25, 0, 25)
 	Ruafimg.Image = getgenv().UIColor["Logo Image"]
 
+-- ==== PATCH KISMI (En alta ekle) ====
+task.spawn(function()
+    task.wait(1) -- Arayüzün yüklenmesini bekle
+    local CoreGui = game:GetService("CoreGui")
+    local Gui = CoreGui:FindFirstChild("Nousigi Hub GUI")
+    if Gui then
+        -- 1. Tüm sarı renkleri pembeye çevir
+        for _, v in pairs(Gui:GetDescendants()) do
+            if v:IsA("TextLabel") or v:IsA("TextButton") or v:IsA("TextBox") then
+                if v.TextColor3 == Color3.fromRGB(255, 206, 27) then
+                    v.TextColor3 = Color3.fromRGB(255, 105, 180)
+                end
+            end
+            if v:IsA("Frame") or v:IsA("ImageLabel") then
+                if v.BackgroundColor3 == Color3.fromRGB(255, 206, 27) then
+                    v.BackgroundColor3 = Color3.fromRGB(255, 105, 180)
+                end
+                if v.ImageColor3 == Color3.fromRGB(255, 206, 27) then
+                    v.ImageColor3 = Color3.fromRGB(255, 105, 180)
+                end
+            end
+            -- Şeffaflık artır
+            if v:IsA("Frame") and v.BackgroundTransparency == 0.1 then
+                v.BackgroundTransparency = 0.5
+            end
+            -- Muz logosunu değiştir (Sol üstteki)
+            if v:IsA("ImageLabel") and v.Name == "Ruafimg" then
+                v.Image = "rbxassetid://3169301307"
+            end
+            -- Ana arka planı decal yap
+            if v:IsA("ImageLabel") and v.Name == "MainContainer" then
+                v.Image = "rbxassetid://814404951"
+                v.ImageTransparency = 0.8 -- Çok şeffaf yap ki yazılar okunsun
+            end
+        end
+        print("FemWare Patch Uygulandı: Pembe Tema, Logo ve Şeffaflık Ayarlandı.")
+    end
+end)
+
 	TextLabelMain.Name = "TextLabelMain"
 	TextLabelMain.Parent = TopMain
 	TextLabelMain.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
