@@ -356,7 +356,7 @@ task.spawn(function()
             end
             -- Muz logosunu değiştir (Sol üstteki)
             if v:IsA("ImageLabel") and v.Name == "Ruafimg" then
-                v.Image = "rbxassetid://3169301307"
+                v.Image = "rbxassetid://361181246"
             end
             -- Ana arka planı decal yap
             if v:IsA("ImageLabel") and v.Name == "MainContainer" then
@@ -404,7 +404,7 @@ end)
 	CloseImage.BackgroundColor3 = Color3.fromRGB(230, 230, 230)
 	CloseImage.BackgroundTransparency = 1.000
 	CloseImage.Size = UDim2.new(1, 0, 1, 0)
-	CloseImage.Image = "rbxassetid://3169301307"
+	CloseImage.Image = "rbxassetid://361181246"
 	CloseImage.ImageRectOffset = Vector2.new(284, 4)
 	CloseImage.ImageRectSize = Vector2.new(24, 24)
 	CloseImage.ImageColor3 = getgenv().UIColor["Search Icon Color"]
@@ -628,7 +628,7 @@ task.spawn(function()
             end
             -- Muz logosunu değiştir (Sol üstteki)
             if v:IsA("ImageLabel") and v.Name == "Ruafimg" then
-                v.Image = "rbxassetid://3169301307"
+                v.Image = "rbxassetid://361181246"
             end
             -- Ana arka planı decal yap
             if v:IsA("ImageLabel") and v.Name == "MainContainer" then
